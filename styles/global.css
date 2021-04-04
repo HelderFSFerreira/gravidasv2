@@ -1,0 +1,34 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+      @apply text-4xl;
+      @apply text-gray-600
+    },
+
+    h2 {
+        @apply text-2xl;
+        @apply text-gray-600;
+        @apply flex justify-center pb-5;
+    },
+
+    h3 {
+      @apply text-xl;
+      @apply text-gray-600;
+    }
+
+    input {
+      @apply border;
+      @apply rounded-md;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
