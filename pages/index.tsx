@@ -106,7 +106,7 @@ const Print = () => {
                     <Title/>
                 </div>
                 
-                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 bg-white rounded-lg p-6 divide-y'>
+                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 bg-white rounded-lg p-6 divide-y print:divide-y-reverse'>
                     <div className='container mx-auto print:row-span-2'>
                         <h2>Datas</h2>
                         <InputDates  dates={dates} onChange={(e=>{handleChange(e)})}/>
