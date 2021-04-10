@@ -24,11 +24,27 @@
       @apply border;
       @apply rounded-md;
     }
+
+    th {
+      @apply border px-8 py-4;
+    }
+
+    td {
+      @apply border px-8 py-4;
+    }
 }
 
 @media print {
     @page {
         size: A4;
         margin: 0;
+    }
+
+    th {
+      @apply border px-2 py-1;
+    }
+
+    td {
+      @apply border px-2 py-1;
     }
 }

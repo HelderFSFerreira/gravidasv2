@@ -99,7 +99,7 @@ const Print = () => {
     return (
         
         <div className='bg-gradient-to-tr from-pink-200 to-blue-200 px-20 py-8'>
-            <Header></Header>
+            <Header/>
             <div className='container mx-auto max-w-screen-lg'>
 
                 <div className='py-10 print:hidden'>
@@ -107,9 +107,9 @@ const Print = () => {
                 </div>
                 
                 <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 bg-white rounded-lg p-6 divide-y'>
-                    <div className='container mx-auto'>
+                    <div className='container mx-auto print:row-span-2'>
                         <h2>Datas</h2>
-                        <InputDates dates={dates} onChange={(e=>{handleChange(e)})}/>
+                        <InputDates  dates={dates} onChange={(e=>{handleChange(e)})}/>
                     </div>
                     <div className='container flex flex-col justify-center'>
                         <h2>Ecografias</h2>
