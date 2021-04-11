@@ -10,9 +10,9 @@
   },
 
   h2 {
-      @apply text-2xl;
-      @apply text-gray-600;
-      @apply flex justify-center pb-5;
+    @apply text-2xl;
+    @apply text-gray-600;
+    @apply flex justify-center pb-5;
   },
 
   h3 {
