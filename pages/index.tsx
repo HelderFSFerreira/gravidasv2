@@ -2,12 +2,13 @@ import TableProcedures from '../components/TableProcedures';
 import InputDates from '../components/InputDates';
 import Title from '../components/Title';
 import Header from '../components/Header';
+import Forecast from '../components/Forecast';
 import { useState } from 'react';
 import { ecosInital, examsInitial, listHeader } from '../utils/data';
 import { childDates, Exams } from '../interfaces';
   
 const Print = () => {
-    // const [initialDate, setInitialDate] = useState(new Date());
+    const [initialDate, setInitialDate] = useState<Date|undefined>();
     const [ecos, setEcos] = useState({ecosInital}.ecosInital);
     const [exams, setExams] = useState({examsInitial}.examsInitial);
     const [dates, setDates] = useState<childDates>({
@@ -43,6 +44,7 @@ const Print = () => {
         setDates(currentDates);
         
         let initialDate = getInitialDate(currentDates);
+        setInitialDate(initialDate);
         
 
         if (initialDate) {
@@ -61,9 +63,6 @@ const Print = () => {
 
         for (let i = 0; i < procedures.length; i++) {
             const procedure = procedures[i];
-
-            console.log(initialDate);
-            
 
             let dateSince = new Date(initialDate.valueOf());
             dateSince.setDate(dateSince.getDate() + 7 * procedure.since.weeks + (procedure.since.days || 0));
@@ -106,10 +105,14 @@ const Print = () => {
                     <Title/>
                 </div>
                 
-                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 bg-white rounded-lg p-6 divide-y print:divide-y-reverse'>
+                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 bg-white rounded-lg p-6 divide-y print:divide-y-reverse'>
                     <div className='container mx-auto print:row-span-2'>
                         <h2>Datas</h2>
-                        <InputDates  dates={dates} onChange={(e=>{handleChange(e)})}/>
+                        <InputDates dates={dates} onChange={(e=>{handleChange(e)})}/>
+                    </div>
+                    <div className='container mx-auto print:row-span-2'>
+                        <h2>Previsão</h2>
+                        <Forecast initialDate={initialDate}/>
                     </div>
                     <div className='container flex flex-col justify-center'>
                         <h2>Ecografias</h2>
