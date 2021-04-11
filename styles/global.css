@@ -4,31 +4,51 @@
 @tailwind utilities;
 
 @layer base {
-    h1 {
-      @apply text-4xl;
-      @apply text-gray-600
-    },
+  h1 {
+    @apply text-4xl;
+    @apply text-gray-600
+  },
 
-    h2 {
-        @apply text-2xl;
-        @apply text-gray-600;
-        @apply flex justify-center pb-5;
-    },
+  h2 {
+    @apply text-2xl;
+    @apply text-gray-600;
+    @apply flex justify-center pb-5;
+  },
 
-    h3 {
-      @apply text-xl;
-      @apply text-gray-600;
-    }
+  h3 {
+    @apply text-xl;
+    @apply text-gray-600;
+  }
 
-    input {
-      @apply border;
-      @apply rounded-md;
-    }
+  input {
+    @apply border;
+    @apply rounded-md;
+  }
+
+  th {
+    @apply border px-8 py-4;
+  }
+
+  td {
+    @apply border px-8 py-4;
+  }
 }
 
 @media print {
-    @page {
-        size: A4;
-        margin: 0;
-    }
+  @page {
+      size: A4;
+      margin: 0;
+  }
+
+  th {
+    @apply border px-2 py-1;
+  },
+
+  td {
+    @apply border px-2 py-1;
+  },
+
+  h2 {
+    @apply flex justify-center pb-1;
+  }
 }
