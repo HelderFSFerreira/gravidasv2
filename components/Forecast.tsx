@@ -8,21 +8,12 @@ const Forecast =  ({initialDate} :Props) => {
     const [startDate, setStartDate] = useState<string>('');
     const [weeksOfGestation, setWeeksOfGestation] = useState<number>(0);
 
-    useEffect(() => {
-        if (initialDate) {
-            
-        
-            setStartDate(getDateofBirth(initialDate));
-            setWeeksOfGestation(calculateWeeksOfGestation(initialDate));
-        }   
-    })
-
     function getDateofBirth(initialDate:Date|undefined): string {
         if (initialDate) {
             
             let dateOfBirth = new Date(initialDate.valueOf());
             dateOfBirth.setDate(dateOfBirth.getDate() + 7 * 42);
-            return dateOfBirth.toISOString().split('T')[0]
+            return dateOfBirth.toISOString().split('T')[0];
         } else {
             return '';
         }
@@ -34,6 +25,15 @@ const Forecast =  ({initialDate} :Props) => {
         let diffDates = ( (new Date()).getTime() - initialDate.getTime() ) / oneWeek;
         return Math.floor(diffDates);
     }
+
+    useEffect(() => {
+        if (initialDate) {
+            setStartDate(getDateofBirth(initialDate));
+            setWeeksOfGestation(calculateWeeksOfGestation(initialDate));
+        }   
+    });
+
+    
 
     return(
         <div className='grid grid-cols-2 content-center'>
@@ -52,7 +52,7 @@ const Forecast =  ({initialDate} :Props) => {
             </div>
         </div>
     );
-}
+};
 
 export default Forecast;
 
