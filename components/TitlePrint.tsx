@@ -8,7 +8,7 @@ const TitlePrint =  () => {
                     height={50}></Image>
             <h3>Planeamento de gravidez</h3>
         </div>
-    )
-}
+    );
+};
 
 export default TitlePrint;
