@@ -6,6 +6,7 @@ import Forecast from '../components/Forecast';
 import { useState } from 'react';
 import { ecosInital, examsInitial, listHeader } from '../utils/data';
 import { childDates, Exams } from '../interfaces';
+import TitlePrint from '../components/TitlePrint';
   
 const Print = () => {
     const [initialDate, setInitialDate] = useState<Date|undefined>();
@@ -105,12 +106,15 @@ const Print = () => {
                     <Title/>
                 </div>
                 
-                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 bg-white rounded-lg p-6 divide-y print:divide-y-reverse'>
+                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 print:grid-flow-col print:grid-rows-2 bg-white rounded-lg p-6 divide-y print:divide-transparent'>
                     <div className='container mx-auto print:hidden'>
                         <h2>Datas</h2>
                         <InputDates dates={dates} onChange={(e=>{handleChange(e)})}/>
                     </div>
-                    <div className='container mx-auto print:row-span-2'>
+                    <div className='container mx-auto hidden print:block'>
+                        <TitlePrint/>
+                    </div>
+                    <div className='container mx-auto'>
                         <h2>Previsão</h2>
                         <Forecast initialDate={initialDate}/>
                     </div>
