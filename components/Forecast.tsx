@@ -38,7 +38,7 @@ const Forecast =  ({initialDate} :Props) => {
     return(
         <div className='grid grid-cols-2 content-center'>
             <div className='flex flex-col flex-wrap flex-grow-0 items-center'>
-                <h3>Data prevista de parto</h3>
+                <h3>Data provável de parto</h3>
                 <input  type='date'
                         value={startDate}
                         disabled/>
