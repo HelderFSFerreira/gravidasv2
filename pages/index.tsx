@@ -98,7 +98,7 @@ const Print = () => {
 
     return (
         
-        <div className='bg-gradient-to-tr from-pink-200 to-blue-200 px-20 py-8'>
+        <div className='bg-gradient-to-tr from-pink-200 to-blue-200 px-20 py-8 print:px-5 print:py-2'>
             <Header/>
             <div className='container mx-auto max-w-screen-lg'>
 
@@ -106,7 +106,7 @@ const Print = () => {
                     <Title/>
                 </div>
                 
-                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 print:grid-flow-col print:grid-rows-2 bg-white rounded-lg p-6 divide-y print:divide-transparent'>
+                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 print:grid-flow-col print:grid-rows-2 bg-white rounded-lg p-6 print:p-0 divide-y print:divide-transparent'>
                     <div className='container mx-auto print:hidden'>
                         <h2>Datas</h2>
                         <InputDates dates={dates} onChange={(e=>{handleChange(e)})}/>
