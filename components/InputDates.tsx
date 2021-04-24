@@ -31,12 +31,12 @@ const InputDates = ({dates, onChange}: Props) => {
                 <input  type='number'
                         id='weeks'
                         // value={dates.weeks}
-                        onChange={((e) => {onChange(e)})}
+                        onChange={((e) => {onChange(e);})}
                         />
                 <h3>Dias</h3>
                 <input  type='number'
                         id='days'     
-                        onChange={((e) => {onChange(e)})}          
+                        onChange={((e) => {onChange(e);})}          
                         // value={dates.days}
                         />
             </div>
