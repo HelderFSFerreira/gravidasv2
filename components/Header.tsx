@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 const Header =  () => {
     return (
@@ -16,7 +16,7 @@ const Header =  () => {
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
         </div>
-    )
-}
+    );
+};
 
 export default Header;
