@@ -78,8 +78,8 @@ export const examsInitial: Exams = [
 export const listHeader: ListHeader = {
     status: 'Status',
     desk: 'Descrição',
-    start: 'Inicio',
-    end: 'Fim'
+    start: 'A partir de',
+    end: 'Data limite'
 }
 
 export const idChangesToHande: idChangesToHandle[] = [ 'menstruationDate', 'ecographyDate', 'weeks', 'days' ];
