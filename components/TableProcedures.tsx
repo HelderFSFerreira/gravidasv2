@@ -30,6 +30,6 @@ const TableProcedures =  ({list, header} :Props) => {
 
         </table>
     );
-}
+};
 
 export default TableProcedures;
