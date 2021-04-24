@@ -1,4 +1,4 @@
-import { Exams, ListHeader } from "../interfaces";
+import { Exams, ListHeader } from '../interfaces';
 
 type Props = {
     list: Exams

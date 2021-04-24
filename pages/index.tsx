@@ -42,6 +42,42 @@ const Print = () => {
                 break;
         }
 
+        function getInitialDate(date:childDates):Date | undefined  {
+            let initialDate: Date | undefined;
+    
+            if (date.ecographyDate) {
+                let ecoDate = new Date(date.ecographyDate);
+                initialDate = new Date();
+                initialDate.setDate(ecoDate.getDate() - (7 * date.weeks || 0) - (date.days || 0));
+                
+            } else {
+                if (date.menstruationDate) {
+                    initialDate = new Date(date.menstruationDate);
+                }
+            }
+            return initialDate;
+        }
+
+        function getProceduresDates(initialDate: Date, procedures: Exams): Exams {
+
+            let procedureFinalDates :Exams = [];
+    
+            for (let i = 0; i < procedures.length; i++) {
+                const procedure = procedures[i];
+    
+                let dateSince = new Date(initialDate.valueOf());
+                dateSince.setDate(dateSince.getDate() + 7 * procedure.since.weeks + (procedure.since.days || 0));
+                procedure.since.display = dateSince.getDate() + '/' + (dateSince.getUTCMonth() + 1) + '/' + dateSince.getUTCFullYear();
+                
+                let dateUntil = new Date(initialDate.valueOf());
+                dateUntil.setDate(dateUntil.getDate() + 7 * procedure.until.weeks + (procedure.until.days || 0));
+                procedure.until.display = dateUntil.getDate() + '/' + (dateUntil.getUTCMonth() + 1) + '/' + dateUntil.getUTCFullYear();
+    
+                procedureFinalDates.push(procedure);
+            }
+            return procedureFinalDates;
+        }
+
         setDates(currentDates);
         
         let initialDate = getInitialDate(currentDates);
@@ -58,44 +94,6 @@ const Print = () => {
     };
 
 
-    function getProceduresDates(initialDate: Date, procedures: Exams): Exams {
-
-        let procedureFinalDates :Exams = [];
-
-        for (let i = 0; i < procedures.length; i++) {
-            const procedure = procedures[i];
-
-            let dateSince = new Date(initialDate.valueOf());
-            dateSince.setDate(dateSince.getDate() + 7 * procedure.since.weeks + (procedure.since.days || 0));
-            procedure.since.display = dateSince.getDate() + '/' + (dateSince.getUTCMonth() + 1) + '/' + dateSince.getUTCFullYear();
-            
-            let dateUntil = new Date(initialDate.valueOf());
-            dateUntil.setDate(dateUntil.getDate() + 7 * procedure.until.weeks + (procedure.until.days || 0));
-            procedure.until.display = dateUntil.getDate() + '/' + (dateUntil.getUTCMonth() + 1) + '/' + dateUntil.getUTCFullYear();
-
-            procedureFinalDates.push(procedure);
-        }
-        return procedureFinalDates;
-    }
-
-    
-
-    function getInitialDate(date:childDates):Date | undefined  {
-        let initialDate: Date | undefined;
-
-        if (date.ecographyDate) {
-            let ecoDate = new Date(date.ecographyDate)
-            initialDate = new Date();
-            initialDate.setDate(ecoDate.getDate() - (7 * date.weeks || 0) - (date.days || 0));
-            
-        } else {
-            if (date.menstruationDate) {
-                initialDate = new Date(date.menstruationDate);
-            }
-        }
-        return initialDate;
-    }
-
     return (
         
         <div className='bg-gradient-to-tr from-pink-200 to-blue-200 px-20 py-8 print:px-5 print:py-2'>
@@ -109,7 +107,7 @@ const Print = () => {
                 <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 print:grid-flow-col print:grid-rows-2 bg-white rounded-lg p-6 print:p-0 divide-y print:divide-transparent'>
                     <div className='container mx-auto print:hidden'>
                         <h2>Datas</h2>
-                        <InputDates dates={dates} onChange={(e=>{handleChange(e)})}/>
+                        <InputDates dates={dates} onChange={((e) => {handleChange(e)})}/>
                     </div>
                     <div className='container mx-auto hidden print:block'>
                         <TitlePrint/>
@@ -129,8 +127,8 @@ const Print = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 
 export default Print;

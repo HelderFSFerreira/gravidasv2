@@ -9,7 +9,7 @@ const Title =  () => {
                     height={200}></Image>
             <h1>Planeamento de gravidez</h1>
         </div>
-    )
-}
+    );
+};
 
 export default Title;
