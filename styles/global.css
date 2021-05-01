@@ -5,34 +5,27 @@
 
 @layer base {
   h1 {
-    @apply text-4xl;
-    @apply text-gray-600
+    @apply text-4xl text-gray-600
   },
 
   h2 {
-    @apply text-2xl;
-    @apply text-gray-600;
-    @apply text-center pb-5;
+    @apply text-2xl text-gray-600 text-center pb-5;
   },
 
   h3 {
-    @apply text-xl;
-    @apply text-gray-600;
+    @apply text-xl text-gray-600;
   }
 
   input {
-    @apply border;
-    @apply rounded-md;
+    @apply border rounded-md;
   }
 
   th {
-    @apply text-center text-sm;
-    @apply border px-8 py-4;
+    @apply text-center text-sm border px-8 py-4;
   }
 
   td {
-    @apply text-center text-sm;
-    @apply border px-8 py-4;
+    @apply text-center text-sm border px-8 py-4;
   }
 }
 
@@ -40,15 +33,14 @@
   @page {
       size: A4;
       margin: 0;
-  }
+  },
 
   h1 {
     @apply text-xl;
   },
 
   h2 {
-    @apply text-base;
-    @apply text-center pb-1;
+    @apply text-base text-center pb-1;
   },
 
   h3 {
@@ -56,13 +48,11 @@
   }
 
   th {
-    @apply border px-2 py-1;
-    @apply text-center text-xs;
+    @apply border px-2 py-1 text-center text-xs;
   },
 
   td {
-    @apply border px-2 py-1 text-xs;
-    @apply text-center text-xs;
+    @apply border px-2 py-1 text-xs text-center;
   }
 
 }
