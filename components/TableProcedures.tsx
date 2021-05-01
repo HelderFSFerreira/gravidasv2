@@ -8,8 +8,8 @@ type Props = {
 const TableProcedures =  ({list, header} :Props) => {
 
     return(
-        <table className="shadow-lg">
-            <thead className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        <table className="shadow-lg print:shadow-none print:border-2 print:border-gray-600">
+            <thead className="px-5 py-3 border-b-2 border-gray-200 print:border-gray-600 bg-gray-100 font-semibold text-gray-600 uppercase tracking-wider">
                 <tr>
                     <th>{header.desk}</th>
                     <th>{header.start}</th>

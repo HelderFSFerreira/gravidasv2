@@ -5,8 +5,8 @@ const TitlePrint =  () => {
         <div className='inline-flex space-x-4'>
             <Image  src='/logo.png'
                     width={50}
-                    height={50}></Image>
-            <h3>Planeamento de gravidez</h3>
+                    height={50}/>
+            <h1>Planeamento de gravidez</h1>
         </div>
     );
 };
