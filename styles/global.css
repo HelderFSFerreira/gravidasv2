@@ -12,7 +12,7 @@
   h2 {
     @apply text-2xl;
     @apply text-gray-600;
-    @apply flex justify-center pb-5;
+    @apply text-center pb-5;
   },
 
   h3 {
@@ -26,10 +26,12 @@
   }
 
   th {
+    @apply text-center text-sm;
     @apply border px-8 py-4;
   }
 
   td {
+    @apply text-center text-sm;
     @apply border px-8 py-4;
   }
 }
@@ -40,15 +42,23 @@
       margin: 0;
   }
 
+  h2 {
+    @apply text-base;
+    @apply text-center pb-1;
+  },
+
+  h3 {
+    @apply text-sm;
+  }
+
   th {
     @apply border px-2 py-1;
+    @apply text-center text-xs;
   },
 
   td {
-    @apply border px-2 py-1;
-  },
-
-  h2 {
-    @apply flex justify-center pb-1;
+    @apply border px-2 py-1 text-xs;
+    @apply text-center text-xs;
   }
+
 }
