@@ -43,8 +43,8 @@ export const examsInitial: Exams = [
     {
         description: '1º Trimestre',
         since: {
-            display: '8 semanas',
-            weeks: 8
+            display: '0 semanas',
+            weeks: 0
         },
         until: {
             display: '12 Semanas',
@@ -71,6 +71,17 @@ export const examsInitial: Exams = [
         until: {
             display: '34 Semanas',
             weeks: 34,
+        },
+    },
+    {
+        description: 'StrepB',
+        since: {
+            display: '35 semanas',
+            weeks: 35
+        },
+        until: {
+            display: '37 Semanas',
+            weeks: 37,
         },
     }
 ];
