@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { ecosInital, examsInitial, listHeader } from '../utils/data';
 import { childDates, Exams } from '../interfaces';
 import TitlePrint from '../components/TitlePrint';
+import Footer from '../components/footer';
   
 const Print = () => {
     const [initialDate, setInitialDate] = useState<Date|undefined>();
@@ -95,36 +96,40 @@ const Print = () => {
 
 
     return (
-        
-        <div className='bg-gradient-to-tr from-pink-200 to-blue-200 px-20 py-8 print:px-5 print:py-2'>
-            <Header/>
-            <div className='container mx-auto max-w-screen-lg'>
+        <div>
+            <div className='bg-gradient-to-tr from-pink-200 to-blue-200 px-20'>
+                <div className=' py-8 print:px-5 print:py-2'>
+                    <Header/>
+                    <div className='container mx-auto max-w-screen-lg'>
 
-                <div className='py-10 print:hidden'>
-                    <Title/>
+                        <div className='py-10 print:hidden'>
+                            <Title/>
+                        </div>
+                    
+                        <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 print:grid-flow-col print:grid-rows-2 bg-white rounded-lg p-6 print:p-0 divide-y print:divide-transparent'>
+                            <div className='container mx-auto print:hidden'>
+                                <h2>Datas</h2>
+                                <InputDates dates={dates} onChange={((e) => {handleChange(e);})}/>
+                            </div>
+                            <div className='container mx-auto hidden print:block'>
+                                <TitlePrint/>
+                            </div>
+                            <div className='container mx-auto'>
+                                <h2>Previsão</h2>
+                                <Forecast initialDate={initialDate}/>
+                            </div>
+                            <div className='container flex flex-col justify-center'>
+                                <h2>Ecografias</h2>
+                                <TableProcedures list={ecos} header={listHeader}></TableProcedures>
+                            </div>
+                            <div className='container flex flex-col justify-center'>
+                                <h2>Exames</h2>
+                                <TableProcedures list={exams} header={listHeader}></TableProcedures>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div className='grid grid-cols-1 print:grid-cols-2 gap-y-5 print:gap-y-0 print:grid-flow-col print:grid-rows-2 bg-white rounded-lg p-6 print:p-0 divide-y print:divide-transparent'>
-                    <div className='container mx-auto print:hidden'>
-                        <h2>Datas</h2>
-                        <InputDates dates={dates} onChange={((e) => {handleChange(e);})}/>
-                    </div>
-                    <div className='container mx-auto hidden print:block'>
-                        <TitlePrint/>
-                    </div>
-                    <div className='container mx-auto'>
-                        <h2>Previsão</h2>
-                        <Forecast initialDate={initialDate}/>
-                    </div>
-                    <div className='container flex flex-col justify-center'>
-                        <h2>Ecografias</h2>
-                        <TableProcedures list={ecos} header={listHeader}></TableProcedures>
-                    </div>
-                    <div className='container flex flex-col justify-center'>
-                        <h2>Exames</h2>
-                        <TableProcedures list={exams} header={listHeader}></TableProcedures>
-                    </div>
-                </div>
+                <Footer/>
             </div>
         </div>
     );

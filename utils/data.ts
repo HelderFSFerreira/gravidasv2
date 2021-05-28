@@ -94,3 +94,7 @@ export const listHeader: ListHeader = {
 };
 
 export const idChangesToHande: idChangesToHandle[] = [ 'menstruationDate', 'ecographyDate', 'weeks', 'days' ];
+
+export const siteName: string = 'Gravidez';
+export const github: string = 'https://github.com/HelderFSFerreira';
+export const email: string = 'mailto:all@helderferreira.io';
