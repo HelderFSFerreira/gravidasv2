@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { ecosInital, examsInitial, listHeader } from '../utils/data';
 import { childDates, Exams } from '../interfaces';
 import TitlePrint from '../components/TitlePrint';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
   
 const Print = () => {
     const [initialDate, setInitialDate] = useState<Date|undefined>();
