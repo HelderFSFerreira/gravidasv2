@@ -129,7 +129,9 @@ const Print = () => {
                         </div>
                     </div>
                 </div>
-                <Footer/>
+                <div className='container mx-auto max-w-screen-lg'>
+                    <Footer/>
+                </div>
             </div>
         </div>
     );
