@@ -129,7 +129,7 @@ const Print = () => {
                         </div>
                     </div>
                 </div>
-                <div className='container mx-auto max-w-screen-lg'>
+                <div className='container mx-auto max-w-screen-lg print:hidden'>
                     <Footer/>
                 </div>
             </div>
