@@ -123,7 +123,7 @@ const Print = () => {
                                 <TableProcedures list={ecos} header={listHeader}></TableProcedures>
                             </div>
                             <div className='container flex flex-col justify-center'>
-                                <h2>Exames</h2>
+                                <h2>Rastreios analiticos</h2>
                                 <TableProcedures list={exams} header={listHeader}></TableProcedures>
                             </div>
                         </div>
