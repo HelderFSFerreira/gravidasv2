@@ -61,17 +61,16 @@ const Forecast =  ({initialDate} :Props) => {
                         disabled/>
             </div>
 
-            <div className='flex flex-col flex-wrap flex-grow-0 items-center print:hidden'>
+            <div className='flex flex-col flex-wrap flex-grow-0 items-center divide-y print:hidden'>
                 <h3>Tempo de gestação</h3>
-
-                <div className="flex">
-                    <span className="text-sm border-2 rounded-l px-4 py-2 bg-gray-300 whitespace-no-wrap">Semanas:</span>
-                    <span className="border-2 rounded-r px-4 py-2 w-full"> {weeksOfGestation} </span>
-                </div>
-                
-                <div className="flex">
-                    <span className="text-sm border-2 rounded-l px-4 py-2 bg-gray-300 whitespace-no-wrap">Dias</span>
-                    <span className="border-2 rounded-r px-4 py-2 w-full"> {daysOfGestation} </span>
+                <div>
+                    <div className="grid grid-cols-2 border">
+                        <span className="text-sm px-2 py-2 bg-gray-100 align-middle border-b">Semanas:</span>
+                        <div className=" text-sm px-2 py-2 align-middle text-center border-b"> {weeksOfGestation} </div> 
+                    
+                        <span className="text-sm px-2 py-2 bg-gray-100 align-middle">Dias: </span>
+                        <div className=" text-sm px-2 py-2 align-middle text-center"> {daysOfGestation} </div>
+                    </div>
                 </div>
             </div>
         </div>
