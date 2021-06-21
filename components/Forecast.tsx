@@ -13,7 +13,7 @@ const Forecast =  ({initialDate} :Props) => {
         if (initialDate) {
             
             let dateOfBirth = new Date(initialDate.valueOf());
-            dateOfBirth.setDate(dateOfBirth.getDate() + 7 * 42);
+            dateOfBirth.setDate(dateOfBirth.getDate() + 7 * 40);
             return dateOfBirth.toISOString().split('T')[0];
         } else {
             return '';
