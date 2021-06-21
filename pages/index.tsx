@@ -8,6 +8,7 @@ import { ecosInital, examsInitial, listHeader } from '../utils/data';
 import { childDates, Exams } from '../interfaces';
 import TitlePrint from '../components/TitlePrint';
 import Footer from '../components/Footer';
+import * as dayjs from 'dayjs';
   
 const Print = () => {
     const [initialDate, setInitialDate] = useState<Date|undefined>();
@@ -48,7 +49,7 @@ const Print = () => {
     
             if (date.ecographyDate) {
                 let ecoDate = new Date(date.ecographyDate);
-                initialDate = new Date();
+                initialDate = dayjs()
                 initialDate.setDate(ecoDate.getDate() - (7 * date.weeks || 0) - (date.days || 0));
                 
             } else {
